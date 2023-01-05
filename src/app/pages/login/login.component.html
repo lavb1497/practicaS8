@@ -1,0 +1,30 @@
+<div class="container mt-4 mb-4">
+  <div class="row">
+    <div class="col">
+      <h4>LOGIN</h4>
+      <div class="mb-3">
+        <label for="inputUsuario" class="col-sm-2 col-form-label">Usuario</label>
+        <div class="col-sm-10">
+          <input class="form-control" type="text" placeholder="Ingresar usuario" aria-label="default input example" [(ngModel)]="usuario">
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Contraseña</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" placeholder="Ingresar contraseña" id="inputPassword" [(ngModel)]="password">
+        </div>
+      </div>
+      <div>
+        <button type="button" class="btn btn-outline-primary mt-2" (click)="ingresar()">LOGIN</button>
+      </div>
+      <div class="mt-4 mb-4" *ngIf="mostrarAcceso">
+        <a href="">Home</a><br>
+        <a href="">Support</a><br>
+        <a href="">Contact</a><br>
+      </div>
+      <div class="mt-4 mb-4" *ngIf="mostrarError" [ngStyle]="{'color':'red'}">
+        <p>{{ mensajeError }}</p>
+      </div>
+    </div>
+  </div>
+</div>
